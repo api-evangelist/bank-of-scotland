@@ -1,0 +1,135 @@
+aid: bank-of-scotland
+url: https://raw.githubusercontent.com/api-evangelist/bank-of-scotland/refs/heads/main/apis.yml
+name: Bank of Scotland
+kind: company
+description: >-
+  Bank of Scotland is a UK high-street retail and commercial bank, founded in
+  1695 and headquartered in Edinburgh, and is one of the oldest banks in the
+  United Kingdom. It is a wholly owned subsidiary brand of Lloyds Banking Group
+  (alongside Lloyds Bank and Halifax), authorised by the Prudential Regulation
+  Authority and regulated by the Financial Conduct Authority and the PRA. As one
+  of the nine mandated CMA9 account-providers, Bank of Scotland participates in
+  the UK Open Banking regime under PSD2, publishing PUBLIC, unauthenticated Open
+  Data reference APIs (ATMs, branches, personal and business current accounts,
+  unsecured SME loans, and commercial credit cards) conformant to the Open
+  Banking Implementation Entity (OBIE) Open Data Standard, plus the OBIE
+  Read/Write API family - Account and Transaction Information (AIS), Payment
+  Initiation (PIS), and Confirmation of Funds (CBPII) - secured with FAPI-grade
+  OAuth2/OIDC, mutual-TLS client authentication, and PSD2 strong customer
+  authentication, accessed through the Lloyds Banking Group developer platform
+  after eIDAS/OBIE certificate onboarding.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Open Banking
+- PSD2
+- OBIE
+- CMA9
+- United Kingdom
+- Payments
+- Account Information
+- Open Data
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: bank-of-scotland:bank-of-scotland-open-data-api
+  name: Bank of Scotland Open Data API
+  description: >-
+    PUBLIC, unauthenticated OBIE Open Data reference API for Bank of Scotland,
+    exposing ATM locations, branch details, personal and business current
+    account products, unsecured SME loans, and commercial credit card products.
+    Confirmed live at https://api.bankofscotland.co.uk/open-banking/v2.2 (all
+    six resource endpoints return HTTP 200 with Open-Licence JSON).
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Open Data
+  - ATMs
+  - Branches
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-opendata-swagger.json
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: bank-of-scotland:bank-of-scotland-account-information-api
+  name: Bank of Scotland Account and Transaction Information API (AIS)
+  description: >-
+    OBIE Read/Write Account and Transaction Information (AIS) API - account
+    details, balances, transactions, standing orders, direct debits,
+    beneficiaries, statements, and products. FAPI-secured (OAuth2/OIDC, mTLS,
+    PSD2 SCA); requires developer onboarding and eIDAS/OBIE certificates. Spec
+    below is the shared OBIE Read/Write standard, not a bank-proprietary
+    contract.
+  humanURL: https://developer.lloydsbanking.com/
+  tags:
+  - Account Information
+  - AIS
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-account-info-openapi.yaml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-payment-initiation-api
+  name: Bank of Scotland Payment Initiation API (PIS)
+  description: >-
+    OBIE Read/Write Payment Initiation (PIS) API - domestic, scheduled, standing
+    order, international, and file payment consents and orders. FAPI-secured
+    (OAuth2/OIDC, mTLS, PSD2 SCA); requires developer onboarding and eIDAS/OBIE
+    certificates. Spec below is the shared OBIE Read/Write standard, not a
+    bank-proprietary contract.
+  humanURL: https://developer.lloydsbanking.com/
+  tags:
+  - Payment Initiation
+  - PIS
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-payment-initiation-openapi.yaml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-confirmation-of-funds-api
+  name: Bank of Scotland Confirmation of Funds API (CBPII)
+  description: >-
+    OBIE Read/Write Confirmation of Funds (CBPII) API - card-based payment
+    instrument issuers confirm whether funds are available on an account.
+    FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA); requires developer onboarding
+    and eIDAS/OBIE certificates. Spec below is the shared OBIE Read/Write
+    standard, not a bank-proprietary contract.
+  humanURL: https://developer.lloydsbanking.com/
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-confirmation-funds-openapi.yaml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+common:
+- type: Website
+  url: https://www.bankofscotland.co.uk/
+- type: DeveloperPortal
+  url: https://developer.lloydsbanking.com/
+- type: Documentation
+  url: https://www.bankofscotland.co.uk/aboutonline/security-and-privacy/open-banking-apis.html
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bank-of-scotland
+- type: TermsOfService
+  url: https://www.bankofscotland.co.uk/legal.html
+- type: PrivacyPolicy
+  url: https://www.bankofscotland.co.uk/legal/privacy.html
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

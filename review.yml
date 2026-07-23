@@ -1,0 +1,100 @@
+aid: bank-of-scotland
+name: Bank of Scotland
+review:
+  question: >-
+    Does Bank of Scotland expose a confirmed live public Open Data API, and how
+    is its OBIE Read/Write API surface documented and secured?
+  answer: true
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Bank of Scotland is a CMA9 account-provider and a wholly owned brand of
+    Lloyds Banking Group (with Lloyds Bank and Halifax). Its PUBLIC OBIE Open
+    Data API was CONFIRMED live: all six standard resource endpoints returned
+    HTTP 200 with Open-Licence JSON at base
+    https://api.bankofscotland.co.uk/open-banking/v2.2 - the /atms response
+    carried BrandName "Bank Of Scotland" and TotalResults 186 with a
+    2026-07-23 LastUpdated timestamp, confirming it is a live, unauthenticated
+    reference-data surface, not a stub.
+
+    The dedicated developer.bankofscotland.co.uk host advertised by third-party
+    trackers does NOT resolve (DNS ENOTFOUND); the reachable developer platform
+    is the Lloyds Banking Group portal at https://developer.lloydsbanking.com/
+    (HTTP 200, "API Developer Portal"), which serves all three group brands.
+
+    The OBIE Read/Write family - Account and Transaction Information (AIS),
+    Payment Initiation (PIS), and Confirmation of Funds (CBPII) - is documented
+    and standards-conformant but AUTHENTICATED: it is FAPI-secured with
+    OAuth2/OIDC, mutual-TLS client authentication, and PSD2 strong customer
+    authentication, and requires developer onboarding plus eIDAS/OBIE
+    certificates. No public .well-known Open Banking / OIDC configuration was
+    discoverable at guessed hosts, so no production Read/Write base URL was
+    fabricated - those entries carry no baseURL by design.
+  specProvenance:
+    openData:
+      file: openapi/obie-opendata-swagger.json
+      provenance: OBIE-standard
+      note: >-
+        Compiled OBIE Open Data Standard swagger from
+        github.com/OpenBankingUK/opendata-api-spec-compiled. Bank of Scotland's
+        live v2.2 endpoints conform to this shared standard; this is NOT a
+        bank-proprietary contract.
+    readWrite:
+      files:
+        - openapi/obie-account-info-openapi.yaml
+        - openapi/obie-payment-initiation-openapi.yaml
+        - openapi/obie-confirmation-funds-openapi.yaml
+      provenance: OBIE-standard
+      note: >-
+        Shared OBIE Read/Write API Standard specs from
+        github.com/OpenBankingUK/read-write-api-specs (dist/openapi). Captured
+        verbatim as the standard Bank of Scotland conforms to, not proprietary
+        bank contracts.
+  authModel:
+    openData: none (public, unauthenticated, Open Licence)
+    readWrite:
+      - FAPI (Financial-grade API) OAuth2 / OpenID Connect
+      - Mutual-TLS (mTLS) client authentication
+      - PSD2 Strong Customer Authentication (SCA)
+      - eIDAS / OBIE certificate onboarding required
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+      documented: true
+      confirmedLive: true
+      note: Public OBIE Open Data; six resource endpoints confirmed HTTP 200.
+    - protocol: REST
+      scheme: https
+      documented: true
+      confirmedLive: false
+      note: >-
+        OBIE Read/Write AIS/PIS/CBPII; FAPI-secured, production base not
+        publicly published (behind onboarding). No host fabricated.
+  openDataEndpointsConfirmed:
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/atms
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/branches
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/personal-current-accounts
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/business-current-accounts
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/unsecured-sme-loans
+    - GET https://api.bankofscotland.co.uk/open-banking/v2.2/commercial-credit-cards
+sources:
+  - url: https://api.bankofscotland.co.uk/open-banking/v2.2/atms
+    type: APIReference
+    note: Confirmed HTTP 200, Open-Licence JSON, BrandName "Bank Of Scotland", 186 ATMs.
+  - url: https://developer.lloydsbanking.com/
+    type: DeveloperPortal
+    note: HTTP 200 Lloyds Banking Group "API Developer Portal" serving Bank of Scotland brand.
+  - url: https://developer.lloydsbanking.com/open-data
+    type: Documentation
+    note: Open Data documentation section of the group developer portal.
+  - url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+    type: OpenAPI
+    note: Source of the compiled OBIE Open Data Standard swagger harvested into openapi/.
+  - url: https://github.com/OpenBankingUK/read-write-api-specs
+    type: OpenAPI
+    note: Source of the OBIE Read/Write (AIS/PIS/CBPII) standard specs harvested into openapi/.
+  - url: https://www.bankofscotland.co.uk/aboutonline/security-and-privacy/open-banking-apis.html
+    type: Documentation
+    note: Bank of Scotland Open Banking APIs consumer page (HTTP 200).
