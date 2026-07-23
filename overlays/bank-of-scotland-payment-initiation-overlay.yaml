@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Bank of Scotland Payment Initiation API (PIS)
+  version: 1.0.0
+extends: openapi/obie-payment-initiation-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: bank-of-scotland
+      x-apievangelist-api: payment-initiation
+      x-apievangelist-standard: OBIE Read/Write Data API Standard v4.0
+      x-apievangelist-security-profile: FAPI 1.0 Advanced + mTLS + PSD2 SCA
+      x-apievangelist-scopes: [payments]
+      x-apievangelist-idempotency-header: x-idempotency-key
+      x-apievangelist-signing-header: x-jws-signature
+      x-apievangelist-conventions: conventions/bank-of-scotland-conventions.yml
+      x-apievangelist-errors: errors/bank-of-scotland-problem-types.yml

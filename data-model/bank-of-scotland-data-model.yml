@@ -1,0 +1,87 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml, openapi/obie-opendata-swagger.json
+summary: >-
+  Entity-relationship graph derived from the OBIE OpenAPI path structure and
+  id-reference fields (AccountId, ConsentId, StatementId, payment ids). The consent
+  resource is the authorisation root for every Read/Write flow; account and payment
+  resources hang off it.
+entities:
+  - name: AccountAccessConsent
+    api: AIS
+    key: ConsentId
+    detail: PSU authorisation grant scoping which accounts/permissions an AISP may read.
+  - name: Account
+    api: AIS
+    key: AccountId
+  - name: Balance
+    api: AIS
+  - name: Transaction
+    api: AIS
+  - name: StandingOrder
+    api: AIS
+  - name: DirectDebit
+    api: AIS
+  - name: Beneficiary
+    api: AIS
+  - name: ScheduledPayment
+    api: AIS
+  - name: Statement
+    api: AIS
+    key: StatementId
+  - name: Party
+    api: AIS
+  - name: Offer
+    api: AIS
+  - name: Product
+    api: AIS
+  - name: DomesticPaymentConsent
+    api: PIS
+    key: ConsentId
+  - name: DomesticPayment
+    api: PIS
+    key: DomesticPaymentId
+  - name: DomesticScheduledPayment
+    api: PIS
+  - name: DomesticStandingOrder
+    api: PIS
+  - name: InternationalPayment
+    api: PIS
+  - name: FilePayment
+    api: PIS
+    key: FilePaymentId
+  - name: FundsConfirmationConsent
+    api: CBPII
+    key: ConsentId
+  - name: FundsConfirmation
+    api: CBPII
+  - name: Branch
+    api: OpenData
+  - name: ATM
+    api: OpenData
+  - name: PersonalCurrentAccount
+    api: OpenData
+  - name: BusinessCurrentAccount
+    api: OpenData
+  - name: UnsecuredSMELoan
+    api: OpenData
+  - name: CommercialCreditCard
+    api: OpenData
+relationships:
+  - {from: Account, to: AccountAccessConsent, kind: belongs_to, via: ConsentId}
+  - {from: Account, to: Balance, kind: has_many, via: AccountId}
+  - {from: Account, to: Transaction, kind: has_many, via: AccountId}
+  - {from: Account, to: StandingOrder, kind: has_many, via: AccountId}
+  - {from: Account, to: DirectDebit, kind: has_many, via: AccountId}
+  - {from: Account, to: Beneficiary, kind: has_many, via: AccountId}
+  - {from: Account, to: ScheduledPayment, kind: has_many, via: AccountId}
+  - {from: Account, to: Statement, kind: has_many, via: AccountId}
+  - {from: Account, to: Party, kind: has_many, via: AccountId}
+  - {from: Account, to: Offer, kind: has_many, via: AccountId}
+  - {from: Account, to: Product, kind: has_one, via: AccountId}
+  - {from: Statement, to: Transaction, kind: has_many, via: StatementId}
+  - {from: DomesticPayment, to: DomesticPaymentConsent, kind: belongs_to, via: ConsentId}
+  - {from: DomesticScheduledPayment, to: DomesticPaymentConsent, kind: belongs_to, via: ConsentId}
+  - {from: FilePayment, to: DomesticPaymentConsent, kind: belongs_to, via: ConsentId}
+  - {from: FundsConfirmation, to: FundsConfirmationConsent, kind: belongs_to, via: ConsentId}

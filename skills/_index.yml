@@ -1,0 +1,17 @@
+generated: '2026-07-23'
+method: generated
+source: openapi/obie-opendata-swagger.json, openapi/obie-account-info-openapi.yaml,
+  openapi/obie-payment-initiation-openapi.yaml
+skills:
+  - file: bank-of-scotland-find-branches-atms.md
+    name: Find Bank of Scotland branches and ATMs
+    api: openapi/obie-opendata-swagger.json
+    operations: [GetBranches, GetAtms, GetPersonalCurrentAccounts]
+  - file: bank-of-scotland-read-account-transactions.md
+    name: Read Bank of Scotland account transactions (AIS)
+    api: openapi/obie-account-info-openapi.yaml
+    operations: [CreateAccountAccessConsents, GetAccountAccessConsentsConsentId, GetAccounts, GetAccountsAccountIdBalances, GetAccountsAccountIdTransactions]
+  - file: bank-of-scotland-initiate-domestic-payment.md
+    name: Initiate a Bank of Scotland domestic payment (PIS)
+    api: openapi/obie-payment-initiation-openapi.yaml
+    operations: [CreateDomesticPaymentConsents, GetDomesticPaymentConsentsConsentId, CreateDomesticPayments, GetDomesticPaymentsDomesticPaymentId]

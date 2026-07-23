@@ -1,0 +1,83 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-payment-initiation-openapi.yaml, openapi/obie-account-info-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml
+summary: >-
+  Cross-cutting request/response semantics for the Bank of Scotland OBIE Read/Write
+  API family (AIS, PIS, CBPII), derived from the OpenAPI security schemes, shared
+  header parameters, and response headers. These conventions follow the Open Banking
+  Implementation Entity (OBIE) Read/Write Data API Standard and the FAPI 1.0 Advanced
+  security profile; the public Open Data API is unauthenticated and follows a simpler
+  read-only, conditional-request convention.
+authentication:
+  style: oauth2
+  detail: >-
+    FAPI 1.0 Advanced. Two OAuth2 flows - client_credentials (TPPOAuth2Security) for
+    TPP/ASPSP client authorisation and authorization_code (PSUOAuth2Security) for PSU
+    strong customer authentication (SCA). Access tokens are sender-constrained via
+    mutual-TLS (OBWAC/OBSEAL or eIDAS QWAC/QSEAL certificates). See
+    authentication/bank-of-scotland-authentication.yml and
+    scopes/bank-of-scotland-scopes.yml.
+idempotency:
+  supported: true
+  mechanism: header
+  header: x-idempotency-key
+  applies_to: >-
+    All resource-creating POST operations across PIS (payment consents, payments,
+    file payments) and CBPII (funds-confirmation consents). Present as a required
+    request header parameter in 18 payment-initiation operations.
+  max_length: 40
+  retention: >-
+    OBIE standard - the ASPSP must ensure the idempotency key is honoured for at least
+    24 hours; a replayed key with an identical request body returns the original
+    resource rather than creating a duplicate.
+  source: openapi/obie-payment-initiation-openapi.yml#/components/parameters/x-idempotency-key
+request_tracing:
+  header: x-fapi-interaction-id
+  detail: >-
+    An RFC 4122 UUID the TPP may send to correlate a request; the ASPSP echoes it back
+    on the response (and generates one when absent). Used for end-to-end tracing and
+    support. Additional FAPI headers - x-fapi-auth-date, x-fapi-customer-ip-address,
+    x-customer-user-agent - convey PSU context.
+message_signing:
+  header: x-jws-signature
+  detail: >-
+    Detached JWS signature over the request/response body for non-repudiation on
+    payment operations (RFC 7515). Present on 62 payment-initiation operations.
+pagination:
+  style: cursor
+  detail: >-
+    OBIE Links/Meta envelope. Collection responses carry a Links object
+    (Self/First/Prev/Next/Last) and a Meta object (TotalPages, FirstAvailableDateTime,
+    LastAvailableDateTime). Transaction and statement queries additionally accept
+    fromBookingDateTime / toBookingDateTime range filters.
+  request_params: [fromBookingDateTime, toBookingDateTime]
+  response_fields: [Links.Self, Links.First, Links.Prev, Links.Next, Links.Last, Meta.TotalPages]
+versioning:
+  style: uri-path
+  detail: >-
+    Major version in the URI path. Read/Write family is v4.0 (/open-banking/v4.0/{aisp|pisp|cbpii});
+    the public Open Data API is served at /open-banking/v2.2. See
+    lifecycle/bank-of-scotland-lifecycle.yml.
+error_envelope:
+  shape: OBErrorResponse1
+  detail: >-
+    OBIE structured error - a top-level object with Code, Id, Message and an Errors[]
+    array of OBError1 objects (ErrorCode, Message, Path, Url). Not RFC 9457
+    problem+json. See errors/bank-of-scotland-problem-types.yml.
+  media_type: application/json
+rate_limit_signaling:
+  headers: [RateLimit, RateLimit-Policy]
+  detail: >-
+    IETF draft RateLimit / RateLimit-Policy response headers are declared in the
+    Read/Write specs to advertise remaining quota and the active policy window.
+conditional_requests:
+  detail: >-
+    The public Open Data API supports If-Modified-Since / If-None-Match request headers
+    and ETag/Last-Modified response headers for efficient polling of ATM, branch and
+    product reference data.
+cross_reference:
+  errors: errors/bank-of-scotland-problem-types.yml
+  lifecycle: lifecycle/bank-of-scotland-lifecycle.yml
+  authentication: authentication/bank-of-scotland-authentication.yml
+  scopes: scopes/bank-of-scotland-scopes.yml

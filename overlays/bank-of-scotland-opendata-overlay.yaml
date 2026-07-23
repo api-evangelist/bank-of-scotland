@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Bank of Scotland Open Data API
+  version: 1.0.0
+extends: openapi/obie-opendata-swagger.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: bank-of-scotland
+      x-apievangelist-api: open-data
+      x-apievangelist-access: public-unauthenticated
+      x-apievangelist-live-base-url: https://api.bankofscotland.co.uk/open-banking/v2.2
+      x-apievangelist-standard: OBIE Open Data API Standard
+      x-apievangelist-license: Open Licence (open data)

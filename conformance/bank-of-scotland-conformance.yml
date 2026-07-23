@@ -1,0 +1,39 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-account-info-openapi.yaml, openapi/obie-payment-initiation-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml, openapi/obie-opendata-swagger.json
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: openapi securitySchemes type oauth2 (TPPOAuth2Security clientCredentials, PSUOAuth2Security authorizationCode)
+  - id: oidc
+    conforms: true
+    evidence: OBIE Read/Write requires OpenID Connect hybrid/authorization-code flow for PSU authentication (id_token + SCA)
+  - id: fapi-1.0-advanced
+    conforms: true
+    evidence: FAPI-grade headers (x-fapi-interaction-id, x-fapi-auth-date, x-fapi-customer-ip-address), detached JWS request signing (x-jws-signature), and sender-constrained tokens
+  - id: mutual-tls
+    conforms: true
+    evidence: OBWAC/OBSEAL or eIDAS QWAC/QSEAL client certificates required for transport and token binding
+  - id: psd2
+    conforms: true
+    evidence: UK PSD2 / CMA9 mandated ASPSP; AIS, PIS and CBPII surfaces with strong customer authentication
+  - id: obie-read-write-standard
+    conforms: true
+    evidence: paths, schemas (OBWriteDomestic*, OBReadAccount*, OBErrorResponse1) and headers follow the OBIE Read/Write Data API Standard v4.0
+  - id: obie-open-data-standard
+    conforms: true
+    evidence: public /open-banking/v2.2 ATM/branch/product endpoints follow the OBIE Open Data API Standard
+  - id: idempotency
+    conforms: true
+    evidence: x-idempotency-key required header on payment-creating POST operations
+  - id: ietf-ratelimit-headers
+    conforms: true
+    evidence: RateLimit and RateLimit-Policy response headers declared in the Read/Write specs
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: errors use the OBIE OBErrorResponse1 envelope, not application/problem+json
+  - id: fhir-r4
+    conforms: false
+  - id: scim2
+    conforms: false

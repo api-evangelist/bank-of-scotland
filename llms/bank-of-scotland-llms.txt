@@ -1,0 +1,36 @@
+# Bank of Scotland
+
+> Bank of Scotland is a UK high-street retail and commercial bank (founded 1695, Edinburgh), a wholly owned brand of Lloyds Banking Group. As one of the CMA9 mandated account providers it publishes UK Open Banking APIs: a PUBLIC unauthenticated OBIE Open Data reference API (ATMs, branches, products) and the FAPI-secured OBIE Read/Write family - Account & Transaction Information (AIS), Payment Initiation (PIS) and Confirmation of Funds (CBPII) - accessed via the Lloyds Banking Group developer platform after eIDAS/OBIE certificate onboarding.
+
+## APIs
+
+- [Open Data API](https://developer.lloydsbanking.com/open-data): Public, unauthenticated ATM/branch/product reference data. Live at https://api.bankofscotland.co.uk/open-banking/v2.2
+- [Account & Transaction Information API (AIS)](https://developer.lloydsbanking.com/): Read accounts, balances, transactions, standing orders, direct debits, beneficiaries, statements, parties, products. FAPI-secured.
+- [Payment Initiation API (PIS)](https://developer.lloydsbanking.com/): Domestic, scheduled, standing-order, international and file payment consents and orders. FAPI-secured, idempotent.
+- [Confirmation of Funds API (CBPII)](https://developer.lloydsbanking.com/): Card-based payment instrument issuers confirm funds availability. FAPI-secured.
+
+## Specs
+
+- [Open Data OpenAPI (Swagger 2.0)](openapi/obie-opendata-swagger.json)
+- [Account Information OpenAPI 3.0 (OBIE R/W v4.0)](openapi/obie-account-info-openapi.yaml)
+- [Payment Initiation OpenAPI 3.0 (OBIE R/W v4.0)](openapi/obie-payment-initiation-openapi.yaml)
+- [Confirmation of Funds OpenAPI 3.0 (OBIE R/W v4.0)](openapi/obie-confirmation-funds-openapi.yaml)
+
+## Artifacts
+
+- [Authentication profile](authentication/bank-of-scotland-authentication.yml): OAuth2 (client_credentials + authorization_code), FAPI, mTLS.
+- [OAuth scopes](scopes/bank-of-scotland-scopes.yml): accounts, payments, fundsconfirmations.
+- [API conventions](conventions/bank-of-scotland-conventions.yml): idempotency (x-idempotency-key), tracing (x-fapi-interaction-id), JWS signing, pagination, rate limits.
+- [Error catalog](errors/bank-of-scotland-problem-types.yml): OBErrorResponse1 envelope + UK.OBIE.* error codes.
+- [Conformance](conformance/bank-of-scotland-conformance.yml): OAuth2, OIDC, FAPI 1.0 Advanced, mTLS, PSD2, OBIE.
+- [Lifecycle](lifecycle/bank-of-scotland-lifecycle.yml): URI-path versioning (R/W v4.0, Open Data v2.2).
+- [Data model](data-model/bank-of-scotland-data-model.yml): consent-rooted account/payment entity graph.
+- [Sandbox](sandbox/bank-of-scotland-sandbox.yml): dummy-data sandbox after TPP onboarding; live Open Data needs no sandbox.
+- [Domain security](security/bank-of-scotland-domain-security.yml): TLS/HSTS/DNS posture.
+
+## Docs
+
+- [Lloyds Banking Group developer platform](https://developer.lloydsbanking.com/)
+- [Bank of Scotland Open Banking APIs](https://www.bankofscotland.co.uk/aboutonline/security-and-privacy/open-banking-apis.html)
+- [OBIE Read/Write standard](https://github.com/OpenBankingUK/read-write-api-specs)
+- [OBIE Open Data spec](https://github.com/OpenBankingUK/opendata-api-spec-compiled)

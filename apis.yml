@@ -52,6 +52,13 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/obie-opendata-swagger.json
+  - type: Overlay
+    url: overlays/bank-of-scotland-opendata-overlay.yaml
+  - type: MCPServer
+    url: mcp/bank-of-scotland-mcp.yml
+  - type: AgentSkill
+    name: Find Bank of Scotland branches and ATMs
+    url: skills/bank-of-scotland-find-branches-atms.md
   - type: Documentation
     url: https://developer.lloydsbanking.com/open-data
   - type: APIReference
@@ -73,6 +80,11 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/obie-account-info-openapi.yaml
+  - type: Overlay
+    url: overlays/bank-of-scotland-account-info-overlay.yaml
+  - type: AgentSkill
+    name: Read Bank of Scotland account transactions (AIS)
+    url: skills/bank-of-scotland-read-account-transactions.md
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
@@ -93,6 +105,11 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/obie-payment-initiation-openapi.yaml
+  - type: Overlay
+    url: overlays/bank-of-scotland-payment-initiation-overlay.yaml
+  - type: AgentSkill
+    name: Initiate a Bank of Scotland domestic payment (PIS)
+    url: skills/bank-of-scotland-initiate-domestic-payment.md
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
@@ -113,11 +130,37 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/obie-confirmation-funds-openapi.yaml
+  - type: Overlay
+    url: overlays/bank-of-scotland-confirmation-funds-overlay.yaml
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- type: DomainSecurity
+  url: security/bank-of-scotland-domain-security.yml
+- type: Authentication
+  url: authentication/bank-of-scotland-authentication.yml
+- type: OAuthScopes
+  url: scopes/bank-of-scotland-scopes.yml
+- type: Conventions
+  url: conventions/bank-of-scotland-conventions.yml
+- type: Idempotency
+  url: conventions/bank-of-scotland-conventions.yml
+- type: ErrorCatalog
+  url: errors/bank-of-scotland-problem-types.yml
+- type: Conformance
+  url: conformance/bank-of-scotland-conformance.yml
+- type: Lifecycle
+  url: lifecycle/bank-of-scotland-lifecycle.yml
+- type: DataModel
+  url: data-model/bank-of-scotland-data-model.yml
+- type: Sandbox
+  url: sandbox/bank-of-scotland-sandbox.yml
+- type: LLMsTxt
+  url: llms/bank-of-scotland-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
 - type: Website
   url: https://www.bankofscotland.co.uk/
 - type: DeveloperPortal

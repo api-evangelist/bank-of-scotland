@@ -1,0 +1,73 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-payment-initiation-openapi.yaml, openapi/obie-account-info-openapi.yaml,
+  openapi/obie-confirmation-funds-openapi.yaml
+format: obie-error
+envelope:
+  schema: OBErrorResponse1
+  media_type: application/json
+  detail: >-
+    OBIE structured error envelope. Top-level object: Code (HTTP status text), Id
+    (unique interaction/trace id), Message (high-level summary), and Errors[] - an
+    array of OBError1 objects each carrying ErrorCode (a UK.OBIE.* category code),
+    Message (human description), Path (JSON path to the offending field, e.g.
+    Data.Initiation.InstructedAmount.Currency) and an optional remediation Url. Not
+    RFC 9457 problem+json.
+http_statuses:
+  - status: 400
+    title: Bad Request
+    description: Request failed OBIE schema/field validation; Errors[] carries UK.OBIE.Field.* / UK.OBIE.Header.* codes.
+  - status: 401
+    title: Unauthorized
+    description: Missing, expired or invalid access token, or failed mutual-TLS / SCA.
+  - status: 403
+    title: Forbidden
+    description: Token valid but lacks the required consent, scope or entitlement for the resource.
+  - status: 404
+    title: Not Found
+    description: Resource (account, consent, payment) does not exist or is not visible under the granted consent.
+  - status: 405
+    title: Method Not Allowed
+  - status: 406
+    title: Not Acceptable
+    description: Requested media type / Accept header not supported.
+  - status: 409
+    title: Conflict
+    description: Idempotency-key reuse with a differing body, or a state conflict on the consent/payment resource (PIS).
+  - status: 415
+    title: Unsupported Media Type
+  - status: 422
+    title: Unprocessable Entity
+    description: Semantically invalid payment (e.g. UK.OBIE.Rules.AfterCutOffDateTime, UK.OBIE.Rules.DuplicateReference, insufficient funds) - PIS.
+  - status: 429
+    title: Too Many Requests
+    description: Rate limit exceeded; see RateLimit / RateLimit-Policy response headers.
+  - status: 500
+    title: Internal Server Error
+    description: UK.OBIE.UnexpectedError - unhandled ASPSP error.
+  # Open Data API additionally returns 408 (Request Timeout) and 503 (Service Unavailable).
+obie_error_codes:
+  note: >-
+    Standard UK.OBIE.* external error codes carried in OBError1.ErrorCode per the OBIE
+    Read/Write Data API Standard; the enumerated list is defined by OBIE, not in the
+    per-bank spec. Common values below.
+  codes:
+    - {code: UK.OBIE.Field.Missing, meaning: A mandatory field was not supplied.}
+    - {code: UK.OBIE.Field.Invalid, meaning: A field value failed validation.}
+    - {code: UK.OBIE.Field.InvalidDate, meaning: A date field is invalid or out of range.}
+    - {code: UK.OBIE.Field.Unexpected, meaning: An unexpected field was supplied.}
+    - {code: UK.OBIE.Field.Unsupported, meaning: A supplied field/value is not supported by this ASPSP.}
+    - {code: UK.OBIE.Header.Missing, meaning: A mandatory HTTP header was not supplied.}
+    - {code: UK.OBIE.Header.Invalid, meaning: An HTTP header value is invalid.}
+    - {code: UK.OBIE.Resource.NotFound, meaning: The referenced resource does not exist.}
+    - {code: UK.OBIE.Resource.InvalidConsentStatus, meaning: The consent is not in a state that permits the operation.}
+    - {code: UK.OBIE.Resource.InvalidFormat, meaning: The resource identifier format is invalid.}
+    - {code: UK.OBIE.Resource.ConsentMismatch, meaning: The resource does not match the granted consent.}
+    - {code: UK.OBIE.Rules.AfterCutOffDateTime, meaning: Payment submitted after the scheme cut-off time.}
+    - {code: UK.OBIE.Rules.DuplicateReference, meaning: Duplicate end-to-end/instruction reference.}
+    - {code: UK.OBIE.Rules.FailsControl, meaning: Payment fails an ASPSP business control (e.g. limits).}
+    - {code: UK.OBIE.Signature.Missing, meaning: Required x-jws-signature header not supplied.}
+    - {code: UK.OBIE.Signature.Invalid, meaning: Detached JWS signature failed verification.}
+    - {code: UK.OBIE.Reauthenticate, meaning: PSU must re-authenticate (SCA) to continue.}
+    - {code: UK.OBIE.Unsupported.Scheme, meaning: The requested payment/account scheme is not supported.}
+    - {code: UK.OBIE.UnexpectedError, meaning: An unexpected error occurred at the ASPSP.}

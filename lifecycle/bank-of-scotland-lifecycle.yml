@@ -1,0 +1,35 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/*, apis.yml
+summary: >-
+  Version and lifecycle posture for the Bank of Scotland Open Banking APIs, derived
+  from the OpenAPI server paths and the OBIE standard the specs implement. Bank of
+  Scotland is a Lloyds Banking Group brand; the developer platform, versioning and
+  deprecation cadence follow the OBIE Read/Write Data API Standard release lifecycle.
+versioning:
+  scheme: uri-path
+  read_write_current: v4.0
+  read_write_base_paths:
+    - /open-banking/v4.0/aisp
+    - /open-banking/v4.0/pisp
+    - /open-banking/v4.0/cbpii
+  open_data_current: v2.2
+  open_data_base_path: /open-banking/v2.2
+  docs: https://developer.lloydsbanking.com/
+deprecation:
+  policy: >-
+    Follows the OBIE Read/Write Data API Standard version lifecycle - new major
+    versions are published by OBIE (now Open Banking Ltd) and ASPSPs run overlapping
+    major versions during migration windows before retiring superseded ones. Bank of
+    Scotland publishes migration timelines on the Lloyds Banking Group developer
+    platform.
+  sunset_header: false
+  standard_ref: https://standards.openbanking.org.uk/
+sla:
+  detail: >-
+    Availability and performance are governed by the FCA/PSD2 regulatory requirement
+    that a dedicated interface perform at least as well as the ASPSP's PSU-facing
+    channels; Lloyds Banking Group publishes monthly OBIE service-availability and
+    performance statistics as required by the CMA Order.
+status_page: null
+deprecated_operations: []

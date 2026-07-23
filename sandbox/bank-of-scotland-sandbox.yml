@@ -1,0 +1,36 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.lloydsbanking.com/, https://standards.openbanking.org.uk/good-practice/testing/latest/
+summary: >-
+  Bank of Scotland's Read/Write APIs are onboarded and tested through the Lloyds
+  Banking Group developer platform. After a TPP is validated (OBIE registration +
+  eIDAS/OBWAC-OBSEAL certificates, or Dynamic Client Registration), it can test the
+  service in a sandbox environment that returns dummy data before promoting to the
+  live/production interface. The public Open Data API has no sandbox - it is live,
+  unauthenticated, and safe to call directly.
+environments:
+  - name: sandbox
+    detail: >-
+      Test the AIS/PIS/CBPII service with dummy PSU data. Separate from production;
+      no real customer money or accounts are affected. Access requires a validated
+      Software Statement Assertion (SSA) and app credentials (Client ID / Client
+      secret) created in the developer dashboard.
+  - name: production
+    detail: Live interface; requires completed onboarding and production eIDAS/OBIE certificates.
+onboarding:
+  routes:
+    - Manual onboarding via the developer portal using OBWAC/OBSEAL or eIDAS QWAC/QSEAL certificates.
+    - Dynamic Client Registration (DCR) for TPPs with an eIDAS certificate onboarding directly.
+  credentials: Client ID and Client secret issued per app after downloading the SSA in the developer dashboard.
+  dashboard: https://developer.lloydsbanking.com/
+open_data:
+  sandbox_required: false
+  detail: >-
+    ATM, branch and product reference endpoints at
+    https://api.bankofscotland.co.uk/open-banking/v2.2 return live Open-Licence data
+    with no authentication - use them directly for testing discovery/reference flows.
+test_values:
+  note: >-
+    Bank of Scotland does not publish fixed magic test identifiers publicly; sandbox
+    test PSUs, accounts and payment fixtures are provisioned per onboarded TPP. No
+    verbatim test values are recorded here to avoid fabrication.
