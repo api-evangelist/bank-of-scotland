@@ -2,33 +2,37 @@ generated: '2026-07-23'
 method: derived
 status: candidate
 source: openapi/obie-opendata-swagger.json
-note: >-
-  No official hosted MCP server is published by Bank of Scotland or Lloyds Banking
-  Group. This is a DERIVED candidate tool list covering the PUBLIC, unauthenticated
-  Open Data API (ATMs, branches, product reference) - the surface that is safe to
-  expose to agents without SCA/consent. The authenticated Read/Write APIs (AIS/PIS/
-  CBPII) are intentionally excluded from this candidate because they require FAPI
-  OAuth2, mTLS and PSU consent that an anonymous MCP tool cannot satisfy.
+note: No official hosted MCP server is published by Bank of Scotland or Lloyds Banking Group. This is
+  a DERIVED candidate tool list covering the PUBLIC, unauthenticated Open Data API (ATMs, branches, product
+  reference) - the surface that is safe to expose to agents without SCA/consent. The authenticated Read/Write
+  APIs (AIS/PIS/ CBPII) are intentionally excluded from this candidate because they require FAPI OAuth2,
+  mTLS and PSU consent that an anonymous MCP tool cannot satisfy.
 server:
   name: bank-of-scotland-open-data
   transport: http
   url: null
 tools:
-  - name: list_branches
-    description: List Bank of Scotland branch locations and details (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1branches/get
-  - name: list_atms
-    description: List Bank of Scotland ATM locations and details (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1atms/get
-  - name: list_personal_current_accounts
-    description: List personal current account products (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1personal-current-accounts/get
-  - name: list_business_current_accounts
-    description: List business current account products (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1business-current-accounts/get
-  - name: list_unsecured_sme_loans
-    description: List unsecured SME loan products (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1unsecured-sme-loans/get
-  - name: list_commercial_credit_cards
-    description: List commercial credit card products (Open Data).
-    source_operation: openapi/obie-opendata-swagger.json#/paths/~1commercial-credit-cards/get
+- name: list_branches
+  description: List Bank of Scotland branch locations and details (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1branches/get
+- name: list_atms
+  description: List Bank of Scotland ATM locations and details (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1atms/get
+- name: list_personal_current_accounts
+  description: List personal current account products (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1personal-current-accounts/get
+- name: list_business_current_accounts
+  description: List business current account products (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1business-current-accounts/get
+- name: list_unsecured_sme_loans
+  description: List unsecured SME loan products (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1unsecured-sme-loans/get
+- name: list_commercial_credit_cards
+  description: List commercial credit card products (Open Data).
+  source_operation: openapi/obie-opendata-swagger.json#/paths/~1commercial-credit-cards/get
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
