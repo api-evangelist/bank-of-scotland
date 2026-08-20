@@ -20,6 +20,17 @@ description: >-
   after eIDAS/OBIE certificate onboarding.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
+- Financial-Services
+- Banking
+- Open Banking
+- PSD2
+- OBIE
+- CMA9
+- United Kingdom
+- Payments
+- Account Information
+- Open Data
+tags_raw:
 - Financial Services
 - Banking
 - Open Banking
@@ -45,6 +56,11 @@ apis:
   humanURL: https://developer.lloydsbanking.com/open-data
   baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
+  - Open Data
+  - ATMs
+  - Branches
+  - Product
+  tags_raw:
   - Open Data
   - ATMs
   - Branches
