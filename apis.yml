@@ -45,114 +45,660 @@ created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.23'
 apis:
-- aid: bank-of-scotland:bank-of-scotland-open-data-api
-  name: Bank of Scotland Open Data API
+- aid: bank-of-scotland:bank-of-scotland-account-access-consents-api
+  name: Bank of Scotland Account Access Consents API
   description: >-
-    PUBLIC, unauthenticated OBIE Open Data reference API for Bank of Scotland,
-    exposing ATM locations, branch details, personal and business current
-    account products, unsecured SME loans, and commercial credit card products.
-    Confirmed live at https://api.bankofscotland.co.uk/open-banking/v2.2 (all
-    six resource endpoints return HTTP 200 with Open-Licence JSON).
+    The Account Access Consents API from Bank of Scotland — 2 operation(s) for account access consents.
   humanURL: https://developer.lloydsbanking.com/open-data
   baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
-  - Open Data
-  - ATMs
-  - Branches
-  - Product
-  tags_raw:
-  - Open Data
-  - ATMs
-  - Branches
-  - Products
+  - Account Access Consents
   properties:
   - type: OpenAPI
-    url: openapi/obie-opendata-swagger.json
-  - type: Overlay
-    url: overlays/bank-of-scotland-opendata-overlay.yaml
-  - type: MCPServer
-    url: mcp/bank-of-scotland-mcp.yml
-  - type: AgentSkill
-    name: Find Bank of Scotland branches and ATMs
-    url: skills/bank-of-scotland-find-branches-atms.md
+    url: openapi/bank-of-scotland-account-access-consents-api-openapi.yml
   - type: Documentation
     url: https://developer.lloydsbanking.com/open-data
   - type: APIReference
     url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
-- aid: bank-of-scotland:bank-of-scotland-account-information-api
-  name: Bank of Scotland Account and Transaction Information API (AIS)
-  description: >-
-    OBIE Read/Write Account and Transaction Information (AIS) API - account
-    details, balances, transactions, standing orders, direct debits,
-    beneficiaries, statements, and products. FAPI-secured (OAuth2/OIDC, mTLS,
-    PSD2 SCA); requires developer onboarding and eIDAS/OBIE certificates. Spec
-    below is the shared OBIE Read/Write standard, not a bank-proprietary
-    contract.
-  humanURL: https://developer.lloydsbanking.com/
-  tags:
-  - Account Information
-  - AIS
-  - Read/Write
-  properties:
-  - type: OpenAPI
-    url: openapi/obie-account-info-openapi.yaml
-  - type: Overlay
-    url: overlays/bank-of-scotland-account-info-overlay.yaml
-  - type: AgentSkill
-    name: Read Bank of Scotland account transactions (AIS)
-    url: skills/bank-of-scotland-read-account-transactions.md
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
-- aid: bank-of-scotland:bank-of-scotland-payment-initiation-api
-  name: Bank of Scotland Payment Initiation API (PIS)
-  description: >-
-    OBIE Read/Write Payment Initiation (PIS) API - domestic, scheduled, standing
-    order, international, and file payment consents and orders. FAPI-secured
-    (OAuth2/OIDC, mTLS, PSD2 SCA); requires developer onboarding and eIDAS/OBIE
-    certificates. Spec below is the shared OBIE Read/Write standard, not a
-    bank-proprietary contract.
-  humanURL: https://developer.lloydsbanking.com/
+- aid: bank-of-scotland:bank-of-scotland-accounts-api
+  name: Bank of Scotland Accounts API
+  description: The Accounts API from Bank of Scotland — 2 operation(s) for accounts.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
-  - Payment Initiation
-  - PIS
-  - Read/Write
+  - Accounts
   properties:
   - type: OpenAPI
-    url: openapi/obie-payment-initiation-openapi.yaml
-  - type: Overlay
-    url: overlays/bank-of-scotland-payment-initiation-overlay.yaml
-  - type: AgentSkill
-    name: Initiate a Bank of Scotland domestic payment (PIS)
-    url: skills/bank-of-scotland-initiate-domestic-payment.md
+    url: openapi/bank-of-scotland-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
-- aid: bank-of-scotland:bank-of-scotland-confirmation-of-funds-api
-  name: Bank of Scotland Confirmation of Funds API (CBPII)
-  description: >-
-    OBIE Read/Write Confirmation of Funds (CBPII) API - card-based payment
-    instrument issuers confirm whether funds are available on an account.
-    FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA); requires developer onboarding
-    and eIDAS/OBIE certificates. Spec below is the shared OBIE Read/Write
-    standard, not a bank-proprietary contract.
-  humanURL: https://developer.lloydsbanking.com/
+- aid: bank-of-scotland:bank-of-scotland-atm-api
+  name: Bank of Scotland ATM API
+  description: Endpoint for getting ATM data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
-  - Confirmation of Funds
-  - CBPII
-  - Read/Write
+  - ATM
   properties:
   - type: OpenAPI
-    url: openapi/obie-confirmation-funds-openapi.yaml
-  - type: Overlay
-    url: overlays/bank-of-scotland-confirmation-funds-overlay.yaml
+    url: openapi/bank-of-scotland-atm-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-balances-api
+  name: Bank of Scotland Balances API
+  description: The Balances API from Bank of Scotland — 2 operation(s) for balances.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-balances-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-bca-api
+  name: Bank of Scotland BCA API
+  description: Endpoint for getting Business Current Account data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - BCA
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-bca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-beneficiaries-api
+  name: Bank of Scotland Beneficiaries API
+  description: The Beneficiaries API from Bank of Scotland — 2 operation(s) for beneficiaries.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Beneficiaries
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-beneficiaries-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-branch-api
+  name: Bank of Scotland Branch API
+  description: Endpoint for getting Branch data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Branch
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-branch-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-ccc-api
+  name: Bank of Scotland CCC API
+  description: Endpoint for getting Commercial Credit Card data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - CCC
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-ccc-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-direct-debits-api
+  name: Bank of Scotland Direct Debits API
+  description: The Direct Debits API from Bank of Scotland — 2 operation(s) for direct debits.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Direct Debits
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-direct-debits-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-payment-consents-api
+  name: Bank of Scotland Domestic Payment Consents API
+  description: >-
+    The Domestic Payment Consents API from Bank of Scotland — 3 operation(s) for domestic payment consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-payments-api
+  name: Bank of Scotland Domestic Payments API
+  description: The Domestic Payments API from Bank of Scotland — 3 operation(s) for domestic payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-scheduled-payment-consents-api
+  name: Bank of Scotland Domestic Scheduled Payment Consents API
+  description: >-
+    The Domestic Scheduled Payment Consents API from Bank of Scotland — 2 operation(s) for domestic scheduled
+    payment consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Scheduled Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-scheduled-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-scheduled-payments-api
+  name: Bank of Scotland Domestic Scheduled Payments API
+  description: >-
+    The Domestic Scheduled Payments API from Bank of Scotland — 3 operation(s) for domestic scheduled
+    payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-standing-order-consents-api
+  name: Bank of Scotland Domestic Standing Order Consents API
+  description: >-
+    The Domestic Standing Order Consents API from Bank of Scotland — 2 operation(s) for domestic standing
+    order consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Standing Order Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-standing-order-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-domestic-standing-orders-api
+  name: Bank of Scotland Domestic Standing Orders API
+  description: >-
+    The Domestic Standing Orders API from Bank of Scotland — 3 operation(s) for domestic standing orders.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Domestic Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-domestic-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-file-payment-consents-api
+  name: Bank of Scotland File Payment Consents API
+  description: >-
+    The File Payment Consents API from Bank of Scotland — 3 operation(s) for file payment consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - File Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-file-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-file-payments-api
+  name: Bank of Scotland File Payments API
+  description: The File Payments API from Bank of Scotland — 4 operation(s) for file payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - File Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-file-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-funds-confirmation-consents-api
+  name: Bank of Scotland Funds Confirmation Consents API
+  description: >-
+    The Funds Confirmation Consents API from Bank of Scotland — 2 operation(s) for funds confirmation
+    consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Funds Confirmation Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-funds-confirmation-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-funds-confirmations-api
+  name: Bank of Scotland Funds Confirmations API
+  description: >-
+    The Funds Confirmations API from Bank of Scotland — 1 operation(s) for funds confirmations.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Funds Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-funds-confirmations-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-payment-consents-api
+  name: Bank of Scotland International Payment Consents API
+  description: >-
+    The International Payment Consents API from Bank of Scotland — 3 operation(s) for international payment
+    consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-payments-api
+  name: Bank of Scotland International Payments API
+  description: >-
+    The International Payments API from Bank of Scotland — 3 operation(s) for international payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-scheduled-payments-api
+  name: Bank of Scotland International Scheduled Payments API
+  description: >-
+    The International Scheduled Payments API from Bank of Scotland — 3 operation(s) for international
+    scheduled payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-scheduled-payments-consents-api
+  name: Bank of Scotland International Scheduled Payments Consents API
+  description: >-
+    The International Scheduled Payments Consents API from Bank of Scotland — 3 operation(s) for international
+    scheduled payments consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Scheduled Payments Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-scheduled-payments-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-standing-orders-api
+  name: Bank of Scotland International Standing Orders API
+  description: >-
+    The International Standing Orders API from Bank of Scotland — 3 operation(s) for international standing
+    orders.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-international-standing-orders-consents-api
+  name: Bank of Scotland International Standing Orders Consents API
+  description: >-
+    The International Standing Orders Consents API from Bank of Scotland — 2 operation(s) for international
+    standing orders consents.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - International Standing Orders Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-international-standing-orders-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-offers-api
+  name: Bank of Scotland Offers API
+  description: The Offers API from Bank of Scotland — 2 operation(s) for offers.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-offers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-parties-api
+  name: Bank of Scotland Parties API
+  description: The Parties API from Bank of Scotland — 3 operation(s) for parties.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-parties-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-pca-api
+  name: Bank of Scotland PCA API
+  description: Endpoint for getting Personal Current Account data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - PCA
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-pca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-products-api
+  name: Bank of Scotland Products API
+  description: The Products API from Bank of Scotland — 2 operation(s) for products.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-products-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-scheduled-payments-api
+  name: Bank of Scotland Scheduled Payments API
+  description: >-
+    The Scheduled Payments API from Bank of Scotland — 2 operation(s) for scheduled payments.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-sme-api
+  name: Bank of Scotland SME API
+  description: Endpoint for getting Unsecured SME Loan data
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - SME
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-sme-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-standing-orders-api
+  name: Bank of Scotland Standing Orders API
+  description: The Standing Orders API from Bank of Scotland — 2 operation(s) for standing orders.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-statements-api
+  name: Bank of Scotland Statements API
+  description: The Statements API from Bank of Scotland — 5 operation(s) for statements.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-statements-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: bank-of-scotland:bank-of-scotland-transactions-api
+  name: Bank of Scotland Transactions API
+  description: The Transactions API from Bank of Scotland — 2 operation(s) for transactions.
+  humanURL: https://developer.lloydsbanking.com/open-data
+  baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-scotland-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.lloydsbanking.com/open-data
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
   - type: Documentation
     url: https://developer.lloydsbanking.com/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- type: Overlay
+  url: overlays/bank-of-scotland-opendata-overlay.yaml
+- type: MCPServer
+  url: mcp/bank-of-scotland-mcp.yml
+- type: AgentSkill
+  url: skills/bank-of-scotland-find-branches-atms.md
+- type: Overlay
+  url: overlays/bank-of-scotland-account-info-overlay.yaml
+- type: AgentSkill
+  url: skills/bank-of-scotland-read-account-transactions.md
+- type: Overlay
+  url: overlays/bank-of-scotland-payment-initiation-overlay.yaml
+- type: AgentSkill
+  url: skills/bank-of-scotland-initiate-domestic-payment.md
+- type: Overlay
+  url: overlays/bank-of-scotland-confirmation-funds-overlay.yaml
 - type: DomainSecurity
   url: security/bank-of-scotland-domain-security.yml
 - type: Authentication
