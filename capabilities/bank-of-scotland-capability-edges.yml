@@ -1,0 +1,240 @@
+slug: bank-of-scotland
+provider: Bank of Scotland
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 24
+edges:
+- tag: Domestic Payment Consents
+  spec_file: bank-of-scotland-domestic-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-payment-consents  CreateDomesticPaymentConsents  Create a Domestic Payment
+    Consent; "Confirm availability of funds for a Domestic Payment"
+  reason: Open Banking PISP consent creation and funds confirmation is payment instruction capture, validation
+    and authorisation.
+- tag: Domestic Payments
+  spec_file: bank-of-scotland-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-payments  CreateDomesticPayments  Initiate a Domestic Payment
+  reason: Explicit domestic payment initiation and status retrieval — Payment Initiation Management.
+- tag: Domestic Scheduled Payments
+  spec_file: bank-of-scotland-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-scheduled-payments  CreateDomesticScheduledPayments  Initiate a Domestic Scheduled
+    Payment
+  reason: Initiation and retrieval of future-dated domestic payment instructions — Payment Initiation
+    Management.
+- tag: International Payments
+  spec_file: bank-of-scotland-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.9
+  evidence: POST /international-payments "Initiate an International Payment"
+  reason: Initiation and status retrieval of international (cross-border) payments.
+- tag: Domestic Scheduled Payment Consents
+  spec_file: bank-of-scotland-domestic-scheduled-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-scheduled-payment-consents  CreateDomesticScheduledPaymentConsents  Create
+    a Domestic Scheduled Payment Consent
+  reason: Consent capture and authorisation for a scheduled domestic payment instruction — payment initiation.
+- tag: Domestic Standing Orders
+  spec_file: bank-of-scotland-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-orders  CreateDomesticStandingOrders  Submit a Domestic Standing Order
+  reason: Submission and retrieval of recurring domestic payment instructions (standing orders) — payment
+    instruction capture and authorisation.
+- tag: International Payment Consents
+  spec_file: bank-of-scotland-international-payment-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-payment-consents "Create an International Payment Consent"; "Confirm Funds
+    Availability for an International Payment"
+  reason: Consent capture and authorisation for cross-border payment initiation.
+- tag: International Scheduled Payments
+  spec_file: bank-of-scotland-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-scheduled-payments "Initiate an International Scheduled Payment"
+  reason: Initiation of future-dated cross-border payments.
+- tag: Domestic Standing Order Consents
+  spec_file: bank-of-scotland-domestic-standing-order-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /domestic-standing-order-consents  CreateDomesticStandingOrderConsents  Create a Domestic
+    Standing Order Consent
+  reason: Consent/authorisation capture for a recurring standing order payment instruction, with frequency
+    and mandate classification schemas — payment initiation.
+- tag: File Payment Consents
+  spec_file: bank-of-scotland-file-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payment-consents — "Create a File Payment Consent"; "Upload a File for a ConsentId"
+    (Payment Initiation API)
+  reason: Open Banking payment-initiation consent capture and authorisation for bulk/batch file payments
+    — payment instruction capture and authorisation.
+- tag: File Payments
+  spec_file: bank-of-scotland-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payments "Submit a File Payment"; "Get payment details for a File Payment"
+  reason: Submission and status tracking of bulk file payment instructions under the Payment Initiation
+    spec — payment initiation/instruction capture.
+- tag: International Scheduled Payments Consents
+  spec_file: bank-of-scotland-international-scheduled-payments-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-scheduled-payment-consents "Create an International Scheduled Payment
+    Consent"
+  reason: Consent/authorisation capture for scheduled cross-border payment initiation.
+- tag: International Standing Orders
+  spec_file: bank-of-scotland-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-standing-orders "Submit an International Standing Order"
+  reason: Recurring cross-border payment instruction submission and detail retrieval.
+- tag: International Standing Orders Consents
+  spec_file: bank-of-scotland-international-standing-orders-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.82
+  evidence: POST /international-standing-order-consents "Create an International Standing Order Consent"
+  reason: Consent capture for recurring cross-border payment mandates.
+- tag: Branch
+  spec_file: bank-of-scotland-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.8
+  evidence: GET /branches — "Open Data Branch API"
+  reason: Open Data publication of branch locations/details, which is branch channel information — Banking
+    Channels Management.
+- tag: Products
+  spec_file: bank-of-scotland-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.78
+  evidence: GET /products  GetProducts; schemas OBPCAData1, OB_FeeCategory1Code, OB_InterestRateType1Code_0,
+    OB_InterestCalculationMethod1Code
+  reason: Exposes the bank's product master for accounts, including fees, rates and interest calculation
+    attributes — banking product catalogue data. Parameter detail is present but the surface is a catalogue
+    read.
+- tag: BCA
+  spec_file: bank-of-scotland-bca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.75
+  evidence: GET /business-current-accounts — "Open Data BCA API"
+  reason: Open Data product-information endpoint publishing the bank's business current account product
+    range (features, rates, eligibility). That is a banking product catalogue disclosure, not an account-servicing
+    operation.
+- tag: Balances
+  spec_file: bank-of-scotland-balances-api-openapi.yml
+  capability_id: BC-1330.10
+  capability_id_l1: BC-1330
+  capability_name: Deposit Account Management
+  confidence: 0.75
+  evidence: GET /accounts/{AccountId}/balances  GetAccountsAccountIdBalances  Get Balances for an AccountId
+  reason: Open Banking AISP balance retrieval for deposit/current accounts (OBReadBalance1, OBCreditDebitCode).
+    Account information servicing of deposit accounts; could also be read as customer servicing but deposit
+    account management is the closest fit.
+- tag: Parties
+  spec_file: bank-of-scotland-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.75
+  evidence: GET /accounts/{AccountId}/party  Get Party for an AccountId; schemas EmailAddress, OBPostalAddress7,
+    OBPartyRelationships1, PartyId
+  reason: Open Banking Parties endpoints expose the account holder's identity, contact and relationship
+    data — banking customer information/golden-record data rather than any technical object.
+- tag: Scheduled Payments
+  spec_file: bank-of-scotland-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340
+  capability_id_l1: BC-1340
+  capability_name: Payments & Card Management
+  confidence: 0.72
+  evidence: GET /accounts/{AccountId}/scheduled-payments  Get Scheduled Payments for an AccountId; schemas
+    OBScheduledPayment3, ScheduledPaymentDateTime, DebtorReference
+  reason: Surfaces future-dated payment instructions held against an account — payments domain data. Read-only
+    retrieval makes the specific sub-capability (initiation vs processing) ambiguous, so only the L1 is
+    asserted.
+- tag: Standing Orders
+  spec_file: bank-of-scotland-standing-orders-api-openapi.yml
+  capability_id: BC-1340
+  capability_id_l1: BC-1340
+  capability_name: Payments & Card Management
+  confidence: 0.72
+  evidence: GET /accounts/{AccountId}/standing-orders  GetAccountsAccountIdStandingOrders; schemas OBFrequency6Code,
+    LastPaymentDateTime, OBExternalMandateClassification1Code
+  reason: Standing order mandates are recurring payment instructions on the account, clearly the payments
+    capability; the read-only surface does not pin down a single sub-capability.
+- tag: Beneficiaries
+  spec_file: bank-of-scotland-beneficiaries-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.7
+  evidence: GET /accounts/{AccountId}/beneficiaries  GetAccountsAccountIdBeneficiaries  Get Beneficiaries
+    for an AccountId
+  reason: Beneficiary (payee) records held against a payment account, with account identification and
+    financial-institution identification schemas — payment instruction payee data supporting payment initiation.
+- tag: CCC
+  spec_file: bank-of-scotland-ccc-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /commercial-credit-cards — "Open Data CCC API"
+  reason: Open Data product catalogue endpoint listing commercial credit card products and their terms;
+    product-information disclosure rather than card issuance or transaction processing.
+- tag: Direct Debits
+  spec_file: bank-of-scotland-direct-debits-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.7
+  evidence: GET /accounts/{AccountId}/direct-debits  GetAccountsAccountIdDirectDebits  Get Direct Debits
+    for an AccountId
+  reason: Retrieval of direct debit mandates on an account (OBMandateRelatedInformation1, ExternalMandateStatus1Code)
+    — payment mandate/instruction information under payments management.

@@ -695,6 +695,9 @@ apis:
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- type: CapabilityMap
+  url: capabilities/bank-of-scotland-capability-edges.yml
+  name: Bank of Scotland Business Capability Map
 - type: Overlay
   url: overlays/bank-of-scotland-opendata-overlay.yaml
 - type: MCPServer
