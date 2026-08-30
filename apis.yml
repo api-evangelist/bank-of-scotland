@@ -82,6 +82,8 @@ apis:
   humanURL: https://developer.lloydsbanking.com/open-data
   baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -591,6 +593,8 @@ apis:
   humanURL: https://developer.lloydsbanking.com/open-data
   baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -682,6 +686,8 @@ apis:
   humanURL: https://developer.lloydsbanking.com/open-data
   baseURL: https://api.bankofscotland.co.uk/open-banking/v2.2
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
