@@ -1,24 +1,22 @@
-# Kin Score artifact — bank-of-scotland — 2026-09-01T210448
+# Kin Score artifact — bank-of-scotland — 2026-10-03T000835
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: bank-of-scotland
-  schema_version: 0.18.0
-  scored_at: '2026-09-01'
-  run_ts: 2026-09-01T210448
-  composite: 33.7
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T000835
+  composite: 30.5
   band: thin
   facets:
-    discoverability: 81.5
-    contract_quality: 50.9
-    governance: 4.5
+    discoverability: 78.6
+    contract_quality: 46.9
+    contract_governance: 4.5
     operational_transparency: 0.0
     developer_ergonomics: 47.0
-    commercial_clarity: 0.0
-    contract_governance: 4.5
     access_clarity: 0.0
   agent_readiness:
-    score: 32.6
+    score: 33.6
     band: agent-ready
     dimensions:
       spec_presence: true
@@ -26,8 +24,8 @@ kin_score:
       reversibility_documented: false
       mcp_server: false
       auth_clarity: negotiable
-      idempotency: documented
-      error_semantics: documented
+      idempotency: verified
+      error_semantics: derived
       openapi_examples: false
       rate_limit_signal: verified
       event_surface_described: false
@@ -44,7 +42,7 @@ kin_score:
     applies: true
     regime: Banking & Open Finance
     regime_id: banking_open_finance
-    score: 50.6
+    score: 31.5
     matched_via: tags
   provenance:
     mcp: derived
