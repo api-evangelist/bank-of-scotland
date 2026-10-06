@@ -70,7 +70,7 @@ tags_raw:
 - Open Data
 - Financial-Services
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: bank-of-scotland:bank-of-scotland-account-access-consents-api
@@ -719,6 +719,8 @@ apis:
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- url: https://www.bankofscotland.co.uk/blog/
+  type: Blog
 - type: CapabilityMap
   url: capabilities/bank-of-scotland-capability-edges.yml
   name: Bank of Scotland Business Capability Map
