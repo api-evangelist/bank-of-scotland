@@ -1,4 +1,4 @@
-# Bank of Scotland (bank-of-scotland)
+# Bank of Scotland
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,98 +64,148 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bank of Scotland is a UK high-street retail and commercial bank, founded in 1695 and headquartered in Edinburgh - one of the oldest banks in the United Kingdom and a wholly owned subsidiary brand of Lloyds Banking Group (alongside Lloyds Bank and Halifax). It is authorised by the Prudential Regulation Authority and regulated by the FCA and PRA, and as one of the mandated CMA9 account-providers it participates in the UK Open Banking regime under PSD2.
+Bank of Scotland is a UK high-street retail and commercial bank, founded in 1695 and headquartered in Edinburgh, and is one of the oldest banks in the United Kingdom. It is a wholly owned subsidiary brand of Lloyds Banking Group (alongside Lloyds Bank and Halifax), authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the PRA. As one of the nine mandated CMA9 account-providers, Bank of Scotland participates in the UK Open Banking regime under PSD2, publishing PUBLIC, unauthenticated Open Data reference APIs (ATMs, branches, personal and business current accounts, unsecured SME loans, and commercial credit cards) conformant to the Open Banking Implementation Entity (OBIE) Open Data Standard, plus the OBIE Read/Write API family - Account and Transaction Information (AIS), Payment Initiation (PIS), and Confirmation of Funds (CBPII) - secured with FAPI-grade OAuth2/OIDC, mutual-TLS client authentication, and PSD2 strong customer authentication, accessed through the Lloyds Banking Group developer platform after eIDAS/OBIE certificate onboarding.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bank-of-scotland/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bank-of-scotland/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Open Banking · PSD2 · OBIE · CMA9 · United Kingdom · Payments · Account Information · Open Data
 
-## Tags
+## Bank of Scotland on APIs.io
 
-- Financial Services
-- Banking
-- Open Banking
-- PSD2
-- OBIE
-- CMA9
-- United Kingdom
-- Payments
-- Account Information
-- Open Data
+Everything profiled for Bank of Scotland is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bank-of-scotland/](https://apis.io/providers/bank-of-scotland/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (34)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Bank of Scotland Account Access Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-account-access-consents-api/) — The Account Access Consents API from Bank of Scotland — 2 operation(s) for account access consents.
+- [Bank of Scotland Accounts API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-accounts-api/) — The Accounts API from Bank of Scotland — 2 operation(s) for accounts.
+- [Bank of Scotland ATM API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-atm-api/) — Endpoint for getting ATM data
+- [Bank of Scotland Balances API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-balances-api/) — The Balances API from Bank of Scotland — 2 operation(s) for balances.
+- [Bank of Scotland BCA API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-bca-api/) — Endpoint for getting Business Current Account data
+- [Bank of Scotland Beneficiaries API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-beneficiaries-api/) — The Beneficiaries API from Bank of Scotland — 2 operation(s) for beneficiaries.
+- [Bank of Scotland Branch API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-branch-api/) — Endpoint for getting Branch data
+- [Bank of Scotland CCC API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-ccc-api/) — Endpoint for getting Commercial Credit Card data
+- [Bank of Scotland Direct Debits API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-direct-debits-api/) — The Direct Debits API from Bank of Scotland — 2 operation(s) for direct debits.
+- [Bank of Scotland Domestic Payment Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-payment-consents-api/) — The Domestic Payment Consents API from Bank of Scotland — 3 operation(s) for domestic payment consents.
+- [Bank of Scotland Domestic Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-payments-api/) — The Domestic Payments API from Bank of Scotland — 3 operation(s) for domestic payments.
+- [Bank of Scotland Domestic Scheduled Payment Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-scheduled-payment-consents-api/) — The Domestic Scheduled Payment Consents API from Bank of Scotland — 2 operation(s) for domestic scheduled payment consents.
+- [Bank of Scotland Domestic Scheduled Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-scheduled-payments-api/) — The Domestic Scheduled Payments API from Bank of Scotland — 3 operation(s) for domestic scheduled payments.
+- [Bank of Scotland Domestic Standing Order Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-standing-order-consents-api/) — The Domestic Standing Order Consents API from Bank of Scotland — 2 operation(s) for domestic standing order consents.
+- [Bank of Scotland Domestic Standing Orders API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-domestic-standing-orders-api/) — The Domestic Standing Orders API from Bank of Scotland — 3 operation(s) for domestic standing orders.
+- [Bank of Scotland File Payment Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-file-payment-consents-api/) — The File Payment Consents API from Bank of Scotland — 3 operation(s) for file payment consents.
+- [Bank of Scotland File Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-file-payments-api/) — The File Payments API from Bank of Scotland — 4 operation(s) for file payments.
+- [Bank of Scotland Funds Confirmation Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-funds-confirmation-consents-api/) — The Funds Confirmation Consents API from Bank of Scotland — 2 operation(s) for funds confirmation consents.
+- [Bank of Scotland Funds Confirmations API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-funds-confirmations-api/) — The Funds Confirmations API from Bank of Scotland — 1 operation(s) for funds confirmations.
+- [Bank of Scotland International Payment Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-payment-consents-api/) — The International Payment Consents API from Bank of Scotland — 3 operation(s) for international payment consents.
+- [Bank of Scotland International Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-payments-api/) — The International Payments API from Bank of Scotland — 3 operation(s) for international payments.
+- [Bank of Scotland International Scheduled Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-scheduled-payments-api/) — The International Scheduled Payments API from Bank of Scotland — 3 operation(s) for international scheduled payments.
+- [Bank of Scotland International Scheduled Payments Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-scheduled-payments-consents-api/) — The International Scheduled Payments Consents API from Bank of Scotland — 3 operation(s) for international scheduled payments consents.
+- [Bank of Scotland International Standing Orders API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-standing-orders-api/) — The International Standing Orders API from Bank of Scotland — 3 operation(s) for international standing orders.
+- [Bank of Scotland International Standing Orders Consents API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-international-standing-orders-consents-api/) — The International Standing Orders Consents API from Bank of Scotland — 2 operation(s) for international standing orders consents.
+- [Bank of Scotland Offers API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-offers-api/) — The Offers API from Bank of Scotland — 2 operation(s) for offers.
+- [Bank of Scotland Parties API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-parties-api/) — The Parties API from Bank of Scotland — 3 operation(s) for parties.
+- [Bank of Scotland PCA API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-pca-api/) — Endpoint for getting Personal Current Account data
+- [Bank of Scotland Products API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-products-api/) — The Products API from Bank of Scotland — 2 operation(s) for products.
+- [Bank of Scotland Scheduled Payments API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-scheduled-payments-api/) — The Scheduled Payments API from Bank of Scotland — 2 operation(s) for scheduled payments.
+- [Bank of Scotland SME API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-sme-api/) — Endpoint for getting Unsecured SME Loan data
+- [Bank of Scotland Standing Orders API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-standing-orders-api/) — The Standing Orders API from Bank of Scotland — 2 operation(s) for standing orders.
+- [Bank of Scotland Statements API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-statements-api/) — The Statements API from Bank of Scotland — 5 operation(s) for statements.
+- [Bank of Scotland Transactions API](https://apis.io/apis/bank-of-scotland/bank-of-scotland-transactions-api/) — The Transactions API from Bank of Scotland — 2 operation(s) for transactions.
 
-## APIs
+### Published properties
 
-### Bank of Scotland Open Data API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-PUBLIC, unauthenticated OBIE Open Data reference API exposing ATM locations, branch details, personal and business current account products, unsecured SME loans, and commercial credit card products. Confirmed live: all six resource endpoints return HTTP 200 with Open-Licence JSON.
+#### MCP servers (1)
 
-- **Human URL:** [https://developer.lloydsbanking.com/open-data](https://developer.lloydsbanking.com/open-data)
-- **Base URL:** `https://api.bankofscotland.co.uk/open-banking/v2.2`
+Model Context Protocol servers that expose the API to agents.
 
-#### Confirmed endpoints (HTTP 200)
+- [bank-of-scotland-open-data](https://apis.io/servers/bank-of-scotland/bank-of-scotland-open-data/)
 
-- `GET /atms`
-- `GET /branches`
-- `GET /personal-current-accounts`
-- `GET /business-current-accounts`
-- `GET /unsecured-sme-loans`
-- `GET /commercial-credit-cards`
+#### Collections (1)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [OpenAPI](openapi/obie-opendata-swagger.json) — OBIE Open Data Standard (shared spec)
-- [Documentation](https://developer.lloydsbanking.com/open-data)
-- [API Reference](https://github.com/OpenBankingUK/opendata-api-spec-compiled)
+- [Open Data API](https://apis.io/collections/bank-of-scotland/open-obie-opendata-swagger/)
 
-### Bank of Scotland Account and Transaction Information API (AIS)
+#### Overlays (4)
 
-OBIE Read/Write Account and Transaction Information API - account details, balances, transactions, standing orders, direct debits, beneficiaries, statements, and products. FAPI-secured (OAuth2/OIDC, mTLS, PSD2 SCA); requires developer onboarding and eIDAS/OBIE certificates.
+OpenAPI overlays, including conversational phrasing for each operation.
 
-- **Human URL:** [https://developer.lloydsbanking.com/](https://developer.lloydsbanking.com/)
+- [Bank Of Scotland Account Info Overlay](https://apis.io/overlays/bank-of-scotland/bank-of-scotland-account-info-overlay/)
+- [Bank Of Scotland Confirmation Funds Overlay](https://apis.io/overlays/bank-of-scotland/bank-of-scotland-confirmation-funds-overlay/)
+- [Bank Of Scotland Opendata Overlay](https://apis.io/overlays/bank-of-scotland/bank-of-scotland-opendata-overlay/)
+- [Bank Of Scotland Payment Initiation Overlay](https://apis.io/overlays/bank-of-scotland/bank-of-scotland-payment-initiation-overlay/)
 
-#### Properties
+#### Security (2)
 
-- [OpenAPI](openapi/obie-account-info-openapi.yaml) — shared OBIE Read/Write standard
-- [Documentation](https://developer.lloydsbanking.com/)
-- [API Reference](https://github.com/OpenBankingUK/read-write-api-specs)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Bank of Scotland Payment Initiation API (PIS)
+- [Bank Of Scotland Authentication](https://apis.io/security/bank-of-scotland/bank-of-scotland-authentication/)
+- [Bank Of Scotland Domain Security](https://apis.io/security/bank-of-scotland/bank-of-scotland-domain-security/)
 
-OBIE Read/Write Payment Initiation API - domestic, scheduled, standing order, international, and file payment consents and orders. FAPI-secured; requires developer onboarding and eIDAS/OBIE certificates.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://developer.lloydsbanking.com/](https://developer.lloydsbanking.com/)
+The permissions the API asks for.
 
-#### Properties
+- [Bank Of Scotland Scopes](https://apis.io/scopes/bank-of-scotland/bank-of-scotland-scopes/)
 
-- [OpenAPI](openapi/obie-payment-initiation-openapi.yaml) — shared OBIE Read/Write standard
-- [Documentation](https://developer.lloydsbanking.com/)
-- [API Reference](https://github.com/OpenBankingUK/read-write-api-specs)
+## Where to find this API
 
-### Bank of Scotland Confirmation of Funds API (CBPII)
-
-OBIE Read/Write Confirmation of Funds API - card-based payment instrument issuers confirm whether funds are available on an account. FAPI-secured; requires developer onboarding and eIDAS/OBIE certificates.
-
-- **Human URL:** [https://developer.lloydsbanking.com/](https://developer.lloydsbanking.com/)
-
-#### Properties
-
-- [OpenAPI](openapi/obie-confirmation-funds-openapi.yaml) — shared OBIE Read/Write standard
-- [Documentation](https://developer.lloydsbanking.com/)
-- [API Reference](https://github.com/OpenBankingUK/read-write-api-specs)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.bankofscotland.co.uk/)
-- [Developer Portal](https://developer.lloydsbanking.com/)
 - [Documentation](https://www.bankofscotland.co.uk/aboutonline/security-and-privacy/open-banking-apis.html)
-- [LinkedIn](https://www.linkedin.com/company/bank-of-scotland)
-- [Terms of Service](https://www.bankofscotland.co.uk/legal.html)
-- [Privacy Policy](https://www.bankofscotland.co.uk/legal/privacy.html)
+- [Blog](https://www.bankofscotland.co.uk/blog/)
+- [Terms of service](https://www.bankofscotland.co.uk/legal.html)
+- [Privacy policy](https://www.bankofscotland.co.uk/legal/privacy.html)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 46.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 49.4 |
+| Access clarity | 0.0 |
+
+**Agent readiness 33.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | verified |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 31.5** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bank-of-scotland/](https://apis.io/providers/bank-of-scotland/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bank of Scotland: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bank-of-scotland/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
